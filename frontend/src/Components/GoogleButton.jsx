@@ -2,7 +2,7 @@ import React from "react";
 
 const GoogleLoginButton = () => {
   const CLIENT_ID = "946062620280-it82ni3vd3takcmg43db27ntrfau1iv9.apps.googleusercontent.com";
-  const REDIRECT_URI = "http://localhost:5173/auth/callback"; 
+  const REDIRECT_URI = "https://smart-recipe-generator-frontend-zoy3.onrender.com/auth/callback"; 
   // Change in production
 
   const googleLogin = () => {
