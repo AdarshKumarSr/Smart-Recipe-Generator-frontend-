@@ -5,8 +5,15 @@
 
 AI-powered recipe discovery with Google Login, smart filters, and beautiful UI.
 
-🔗 **Live Project:**
-👉 **[https://smart-recipe-generator-frontend-zoy3.onrender.com](https://smart-recipe-generator-frontend-zoy3.onrender.com)**
+🔗 **Live Frontend App:**
+👉 [https://smart-recipe-generator-frontend-zoy3.onrender.com](https://smart-recipe-generator-frontend-zoy3.onrender.com)
+
+🔗 **Live Backend API:**
+👉 [https://smart-recipe-generator.up.railway.app](https://smart-recipe-generator.up.railway.app)
+
+
+👨‍💻 **Developer Portfolio:**
+👉 [https://portfolio-e7gt.onrender.com/](https://portfolio-e7gt.onrender.com/)
 
 ---
 
