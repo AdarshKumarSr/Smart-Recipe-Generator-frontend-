@@ -2,9 +2,7 @@ import axios from "axios";
 
 const BASE_URL = "https://smart-recipe-generator.up.railway.app/api/recipes";
 
-// --------------------------------------------------
-// HEALTH CHECK
-// --------------------------------------------------
+// heath check
 export const pingServer = async () => {
   try {
     const res = await axios.get(`${BASE_URL}/ping`);
@@ -14,11 +12,10 @@ export const pingServer = async () => {
   }
 };
 
-// --------------------------------------------------
-// FIND (INGREDIENTS + FILTERS)
+// (find)
 // BACKEND EXPECTS:
 // { ingredientsText: "egg tomato", diet, difficulty, cuisine, tag, maxTime, minRating }
-// --------------------------------------------------
+
 export const findRecipes = async (payload) => {
   try {
     const body = {};
@@ -50,10 +47,7 @@ export const findRecipes = async (payload) => {
     return { aiSuggested: true };
   }
 };
-
-// --------------------------------------------------
-// AI DIRECT
-// --------------------------------------------------
+// ai direct
 export const aiRecipe = async (ingredientsArray) => {
   try {
     const res = await axios.post(

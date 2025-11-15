@@ -46,9 +46,7 @@ export default function Recipes() {
     imageBase64: obj?.imageBase64 || null,
   });
 
-  // ============================================================
-  // UNIFIED SEARCH
-  // ============================================================
+
   const runUnifiedSearch = async () => {
     if (!ingredients.trim()) return alert("Enter ingredients!");
 
@@ -65,7 +63,7 @@ export default function Recipes() {
       const data = await findRecipes(payload);
       console.log("Unified /find response:", data);
 
-      // 1️⃣ Backend says: use AI
+      //  Backend says: use AI
       if (data.aiSuggested === true) {
         setAiBtn(true);
         setRecipes([]);
@@ -73,7 +71,7 @@ export default function Recipes() {
         return;
       }
 
-      // 2️⃣ DB RESULTS (MatchResult array)
+      //  DB RESULTS (MatchResult array)
       if (Array.isArray(data)) {
         // BUT array is empty → no match → AI button
         if (data.length === 0) {
@@ -89,14 +87,14 @@ export default function Recipes() {
         return;
       }
 
-      // 3️⃣ Gemini result returned recipe=null → AI fallback
+      //  Gemini result returned recipe=null → AI fallback
       if (data.recipe === null) {
         setAiBtn(true);
         setRecipes([]);
         return;
       }
 
-      // 4️⃣ Should never hit, but safe AI fallback
+      // Should never hit, but safe AI fallback
       setAiBtn(true);
       setRecipes([]);
 
@@ -106,9 +104,7 @@ export default function Recipes() {
   };
 
 
-  // ============================================================
-  // SEARCH BUTTON
-  // ============================================================
+  // search btn
   const handleSearch = async () => {
     await runUnifiedSearch();
 
@@ -120,9 +116,7 @@ export default function Recipes() {
     navigate(`/recipes?${params.toString()}`);
   };
 
-  // ============================================================
-  // APPLY FILTERS
-  // ============================================================
+  // filter 
   const applyFilters = async () => {
     await runUnifiedSearch();
 
@@ -134,9 +128,6 @@ export default function Recipes() {
     navigate(`/recipes?${params.toString()}`);
   };
 
-  // ============================================================
-  // AI RECIPE GENERATOR
-  // ============================================================
   const callAIRecipe = async (override = null) => {
     setAiLoading(true);
 
@@ -154,9 +145,7 @@ export default function Recipes() {
     }
   };
 
-  // ============================================================
-  // AUTO-AI (MoodCard)
-  // ============================================================
+  
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const aiIng = params.get("ai");
@@ -174,9 +163,7 @@ export default function Recipes() {
   const toggleExpand = (i) =>
     setExpandedIndex(expandedIndex === i ? null : i);
 
-  // ============================================================
-  // UI
-  // ============================================================
+  
   return (
     <div className="pt-28 min-h-screen bg-orange-50 py-10 px-4">
       <div className="max-w-4xl mx-auto">

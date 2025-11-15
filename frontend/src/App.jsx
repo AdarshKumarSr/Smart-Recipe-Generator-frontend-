@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/login" element={<GoogleLoginButton />} />
           <Route path="/auth/callback" element={<AuthCallback />} />
 
-          {/* 🔒 Protected route */}
+          {/* Protected route */}
           <Route
             path="/recipes"
             element={
