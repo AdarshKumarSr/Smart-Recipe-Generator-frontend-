@@ -1,101 +1,91 @@
 
 ---
 
-# 🍽️ **Cuisinex – Smart Recipe Generator (Frontend)**
+# Cuisinex – Smart Recipe Generator (Frontend)
 
-AI-powered recipe discovery with Google Login, smart filters, and beautiful UI.
+A frontend web application that enables AI-powered recipe discovery with secure Google Login, smart filtering, and a smooth responsive UI.
 
-🔗 **Live Frontend App:**
-👉 [https://smart-recipe-generator-frontend-zoy3.onrender.com](https://smart-recipe-generator-frontend-zoy3.onrender.com)
-
-🔗 **Live Backend API:**
-👉 [https://smart-recipe-generator.up.railway.app](https://smart-recipe-generator.up.railway.app)
-
-
-👨‍💻 **Developer Portfolio:**
-👉 [https://portfolio-e7gt.onrender.com/](https://portfolio-e7gt.onrender.com/)
+## Live Demo
+Frontend: https://smart-recipe-generator-frontend-zoy3.onrender.com  
+Backend API: https://smart-recipe-generator.up.railway.app  
+Portfolio: https://portfolio-e7gt.onrender.com/
 
 ---
 
-## 🚀 **Tech Stack**
+## Tech Stack
 
-* **React + Vite**
-* **TailwindCSS**
-* **GSAP Animations**
-* **React Router**
-* **Axios**
-* **Lucide Icons**
-
----
-
-## ✨ **Features**
-
-### 🔐 Google Login (OAuth 2.0)
-
-* Full Google OAuth redirection flow
-* After authentication, backend returns JWT
-* Saves user session in LocalStorage
-
-### 🍳 AI Recipe Suggestions
-
-* When no strong match is found in DB
-* Gemini AI generates a new recipe
-
-⚠ **AI Warning:**
-AI suggestions rely on **free-tier Gemini API**.
-At peak hours responses may slow down or temporarily fail.
-
-### 🔍 Smart Search
-
-* Search by **ingredients** (natural text)
-* Filter by:
-
-  * Cuisine
-  * Diet
-  * Difficulty
-  * Max time
-  * Tags
-
-### 🎨 Smooth UI
-
-* GSAP fade & slide animations
-* Fully responsive mobile-first layout
+- React + Vite  
+- Tailwind CSS  
+- GSAP for animations  
+- React Router  
+- Axios  
+- Lucide Icons  
 
 ---
 
-## 📁 **Folder Structure**
+## Features
+
+### Authentication
+- Google OAuth 2.0 based login  
+- Redirect handled through backend  
+- JWT received post-authentication  
+- User session persisted in LocalStorage  
+
+### AI-Based Recipe Suggestions
+- When no suitable match exists in the database  
+- Recipes are generated using Gemini AI  
+
+### Smart Search and Filters
+Users can search by ingredient input and apply filters based on:  
+- Cuisine  
+- Diet  
+- Difficulty  
+- Cooking duration  
+- Tags  
+
+### UI and Experience
+- Subtle GSAP transitions  
+- Clean and responsive layout  
+
+---
+
+## Folder Structure
 
 ```
+
 src/
- ├── Api/
- │     └── recipeApi.js      → API wrapper
- ├── Components/
- │     ├── GoogleButton.jsx
- │     ├── AuthRollback.jsx
- │     ├── Navbar.jsx
- │     ├── Hero.jsx
- │     ├── MoodCard.jsx
- │     └── ServiceCard.jsx
- ├── Pages/
- │     ├── Home.jsx
- │     ├── Recipes.jsx
- │     ├── Services.jsx
- │     └── Contact.jsx
- ├── context/
- │     └── AuthContext.jsx
- ├── App.jsx
- └── main.jsx
+├── Api/
+│     └── recipeApi.js
+├── Components/
+│     ├── GoogleButton.jsx
+│     ├── AuthRollback.jsx
+│     ├── Navbar.jsx
+│     ├── Hero.jsx
+│     ├── MoodCard.jsx
+│     └── ServiceCard.jsx
+├── Pages/
+│     ├── Home.jsx
+│     ├── Recipes.jsx
+│     ├── Services.jsx
+│     └── Contact.jsx
+├── context/
+│     └── AuthContext.jsx
+├── App.jsx
+└── main.jsx
+
 ```
 
 ---
 
-## 🔌 **Frontend → Backend API**
+## API Integration
 
-All API calls are made to:
+All requests originate from:
 
 ```
-https://smart-recipe-generator.up.railway.app/api/recipes
-```
+
+[https://smart-recipe-generator.up.railway.app/api/recipes](https://smart-recipe-generator.up.railway.app/api/recipes)
+
+````
 
 Example:
 
@@ -105,9 +95,9 @@ const BASE_URL = "https://smart-recipe-generator.up.railway.app/api/recipes";
 export const findRecipes = async (payload) => {
   return axios.post(`${BASE_URL}/find`, payload);
 };
-```
+````
 
-### OAuth Callback Page:
+OAuth callback route:
 
 ```jsx
 <Route path="/auth/callback" element={<AuthCallback />} />
@@ -115,60 +105,28 @@ export const findRecipes = async (payload) => {
 
 ---
 
-## 🧪 **Local Development**
+## Local Development
 
 Install dependencies:
+`npm install`
 
-```bash
-npm install
-```
+Run development server:
+`npm run dev`
 
-Run dev server:
+Build for production:
+`npm run build`
 
-```bash
-npm run dev
-```
-
-Build:
-
-```bash
-npm run build
-```
-
-Preview:
-
-```bash
-npm run preview
-```
+Preview build:
+`npm run preview`
 
 ---
 
-## 🌍 **Environment**
+## Environment Notes
 
-The frontend uses static redirect URLs for Google Login:
-
-```
-https://smart-recipe-generator-frontend-zoy3.onrender.com/auth/callback
-```
-
-Backend processes the code and issues a token.
+Google OAuth is configured with a fixed redirect URL:
+`https://smart-recipe-generator-frontend-zoy3.onrender.com/auth/callback`
+Backend receives the code, validates it, and issues a JWT.
 
 ---
 
-## 📸 **Screenshots**
-
-(Add screenshots here)
-
-```
-![Home Page](./screenshots/home.png)
-![Login](./screenshots/login.png)
-![AI Result](./screenshots/ai-result.png)
-```
-
----
-
-## 👨‍💻 **Developer**
-
-[**Adarsh Kumar**](https://portfolio-e7gt.onrender.com/)  
-🌐 Portfolio • software Developer
-
+## Developer © <a href="https://portfolio-e7gt.onrender.com/" target="_blank"><strong>Adarsh Kumar</strong></a>
